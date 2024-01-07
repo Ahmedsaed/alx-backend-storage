@@ -71,7 +71,7 @@ class Cache:
         """ automatically parametrize Cache.get to int """
         data = self._redis.get(key)
         try:
-            data = int(value.decode("utf-8"))
+            data = int(data.decode("utf-8"))
         except Exception:
             data = 0
         return data
